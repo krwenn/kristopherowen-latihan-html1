@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lowongan</title>
+</head>
+<body>
+    <img src="images/toko.jpg" alt="" width="15%">
+    <hr style="border: 1px solid;"> 
+    <a href="TokoBangunanMustikaJayaMandiri.html">Home</a> |
+    <a href="profil.html">Profil</a> |
+    <a href="alamat.html">Alamat</a>
+    <hr style="border: 1px solid;">
+    <h2>Lowongan Kerja</h2>
+    <form action="proses.php" method="post">
+        Nama Lengakap <br/>
+        <input type="text" name="nama" id="nama" required><br><br>
+        Nomor HP<br/>
+        <input type="text" name="nomorhp" id="nomorhp" required><br><br>
+        EMAIL <br>
+        <input type="text" name="email" id="email" required><br><br>
+        Alamat <br>
+        <textarea name="alamat" id="alamat" required></textarea><br><br>
+        Jenis Kelamin <br/>
+        <input type="radio" name="jk" id="jkl" value="L" checked>
+        Laki-Laki <br>
+        <input type="radio" name="jk" id="jkp" value="P">
+        Perempuan <br><br>
+        Keterampilan <br>
+        <textarea name="pesan" id="pesan" required></textarea><br>
+        <button type="submit">Kirim</button>
+            
+    </form>
+</body>
+</html>
