@@ -28,3 +28,9 @@ document.getElementById('nilai').innerHTML += `<tr>
     <td>${data.nilai}</td>
     </tr>`;
 });
+
+fetch('https://dummyjson.com/quotes')
+.then(res => res.json())
+.then(data => {console.log(data.quotes)
+    data.quotes.forEach ( (q) => {document.getElementById('quotes').innerHTML += `<li>${q.quote} = ${q.author}</li>`} )
+});
