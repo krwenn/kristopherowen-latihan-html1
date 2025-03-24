@@ -2,8 +2,8 @@ fetch("https://data.bmkg.go.id/DataMKG/TEWS/autogempa.json")
 .then( res => res.json() )
 .then( data => {
     console.log(data);
-    // console.log(data.Infogempa.gempa.Wilayah);
-    // console.log(data.Infogempa.gempa.Magnitude);
+    console.log(data.Infogempa.gempa.Wilayah);
+    console.log(data.Infogempa.gempa.Magnitude);
     document.getElementById("gempabumi").innerHTML = `
     <div class="col-lg-8 mt-4">
     <h1>${data.Infogempa.gempa.Wilayah}</h1>
