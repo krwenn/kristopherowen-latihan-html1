@@ -38,6 +38,6 @@ function tampil(){
     // cek apakah local storage kosong
 
     data.forEach((item) => {
-        daftar_tamu.innerHTML += <li>${item.nama_pengunjung} - ${item.perlu}</li>;
+        daftar_tamu.innerHTML += `<li>${item.nama_pengunjung} - ${item.perlu}</li>`;
     })
 }
