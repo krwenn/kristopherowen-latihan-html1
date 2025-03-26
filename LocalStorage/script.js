@@ -29,6 +29,10 @@ function simpan(){
     
     localStorage.setItem('ls_bukutamu', JSON.stringify(data)); 
     // Simpan value ke local storage dengan key nama
+
+    daftar_tamu.innerHTML = '';
+    // panggil fungsi tampil()
+    tampil();
 }
 
 function tampil(){
