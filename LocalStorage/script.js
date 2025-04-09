@@ -10,7 +10,8 @@ function simpan(){
     let nama = document.getElementById('nama').value;
     let keperluan = document.getElementById('keperluan').value;
     // Ambil value dari input dengan id nama
-    console.log(nama);
+    let jk = document.getElementById('jk').value;
+    console.log(jk);
     // console.log(keperluan); ini hanya opsional, diawal saja dipakai
 
     // cek apakah local storage kosong
@@ -24,14 +25,18 @@ function simpan(){
         data = JSON.parse(localStorage.getItem('ls_bukutamu'));
         // Ambil data dari local storage dengan key nama
     }
-    data.push({nama_pengunjung: nama, perlu: keperluan});
+
+    data.push({nama_pengunjung: nama, perlu: keperluan, jk: jk});
     // Masukkan value input nama ke dalam array data   
     
     localStorage.setItem('ls_bukutamu', JSON.stringify(data)); 
     // Simpan value ke local storage dengan key nama
 
+    // Kosongkan isi elemen daftar_tamu
     daftar_tamu.innerHTML = '';
-    // panggil fungsi tampil()
+    //panggil fungsi tampil
+    document.getElementById('nama').value = ``;
+    document.getElementById('keperluan').value = ``;
     tampil();
 }
 
@@ -41,7 +46,21 @@ function tampil(){
     ? data = [] : data = JSON.parse(localStorage.getItem('ls_bukutamu'));
     // cek apakah local storage kosong
 
+    console.log(data.length); //tampilkan jumlah data di console
+    document.getElementById('total_tamu').innerHTML = `Total Tamu: ${data.length}`;
+    
+    let total_laki=0;
+    let total_perempuan=0;
+    //menampung variabel laki dan perempuan
+
     data.forEach((item) => {
-        daftar_tamu.innerHTML += `<li>${item.nama_pengunjung} - ${item.perlu}</li>`;
+        if(item.jk == 'L'){
+            total_laki++;
+        } else if(item.jk == 'P') {
+            total_perempuan++;
+        }
+        daftar_tamu.innerHTML += `<li>${item.nama_pengunjung} - ${item.perlu}</li>`
     })
+    document.getElementById('tamu_laki').innerHTML = `Total Tamu Laki-laki: ${total_laki}`;
+    document.getElementById('tamu_perempuan').innerHTML = `Total Tamu Perempuan: ${total_perempuan}`;
 }

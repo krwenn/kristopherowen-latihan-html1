@@ -1,19 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Storage</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulir Buku Tamu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .card-custom {
+      border-radius: 1rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .stat-box {
+      background-color: #ffffff;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+    }
+  </style>
 </head>
 <body>
-    <h1>Formulir Buku Tamu</h1>
-    <input type="text" id="nama" placeholder="Nama Lengkap"><br><br>
-    <input type="text" id="keperluan" placeholder="Keperluan">
-    <br> <br>
-    <button onclick="simpan()">Simpan</button>
+  <div class="container py-5">
+    <div class="row mb-5">
+      <div class="col-lg-6 mx-auto">
+        <div class="card card-custom p-4">
+          <h2 class="mb-4 text-center text-primary">Formulir Buku Tamu</h2>
+          <div class="mb-3">
+            <label for="nama" class="form-label">Nama Lengkap</label>
+            <input type="text" id="nama" class="form-control" placeholder="Masukkan nama lengkap">
+          </div>
+          <div class="mb-3">
+            <label for="keperluan" class="form-label">Keperluan</label>
+            <input type="text" id="keperluan" class="form-control" placeholder="Masukkan keperluan">
+          </div>
+          <div class="mb-3">
+            <label for="jk" class="form-label">Jenis Kelamin</label>
+            <select id="jk" class="form-select">
+              <option value="L">Laki-laki</option>
+              <option value="P">Perempuan</option>
+            </select>
+          </div>
+          <button onclick="simpan()" class="btn btn-primary w-100">Simpan</button>
+        </div>
+      </div>
+    </div>
 
-    <h1>Daftar Tamu</h1>
-    <ul id="daftar_tamu"></ul>
-    <script src="script.js"></script>
+    <div class="row mb-4">
+      <div class="col-lg-8 mx-auto">
+        <h3 class="mb-3 text-center">Daftar Tamu</h3>
+        <ul id="daftar_tamu" class="list-group"></ul>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-md-4 mb-3">
+        <div class="stat-box">
+          <h5>Total Tamu</h5>
+          <p id="total_tamu" class="fs-4 fw-bold text-primary">0</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="stat-box">
+          <h5>Laki-laki</h5>
+          <p id="tamu_laki" class="fs-4 fw-bold text-info">0</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="stat-box">
+          <h5>Perempuan</h5>
+          <p id="tamu_perempuan" class="fs-4 fw-bold text-danger">0</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
